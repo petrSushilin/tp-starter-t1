@@ -6,11 +6,13 @@ import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+@Aspect
 public class LoggingAspect {
     private static final Logger logger = LoggerFactory.getLogger(LoggingAspect.class);
 
@@ -35,7 +37,6 @@ public class LoggingAspect {
     }
 
 
-    // Выводить короткое либо длинное сообщение в зависимости от установленного в configurations значения
     @After("loggingMethods()")
     public void logAfter(JoinPoint joinPoint) {
         LoggingLevel loggerLevel = configurations.getLoggerLevel();
@@ -64,7 +65,7 @@ public class LoggingAspect {
         try {
             result = joinPoint.proceed();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("Runtime в @Around", e);
         }
 
         long endTime = System.currentTimeMillis();
