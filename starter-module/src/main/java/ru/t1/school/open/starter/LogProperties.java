@@ -1,18 +1,19 @@
 package ru.t1.school.open.starter;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import ru.t1.school.open.logger.LoggingCustomizer;
 
 import java.util.Map;
 
-@ConfigurationProperties(prefix = "logging")
+@ConfigurationProperties(prefix = "t1-starter")
 public class LogProperties {
-    private Map<String, String> credentials;
+    private Map<String, LoggingCustomizer> logger;
 
-    public Map<String, String> getCredentials() {
-        return credentials;
+    public Map<String, LoggingCustomizer> getLogger() {
+        return logger;
     }
 
-    public void setCredentials(Map<String, String> credentials) {
-        this.credentials = credentials;
+    public void setLogger(Map<String, LoggingCustomizer> logger) {
+        this.logger = logger;
     }
 }
