@@ -1,0 +1,15 @@
+{
+  "properties": [
+    {
+      "name": "t1-starter.logger.level",
+      "type": "ru.t1.school.open.logger.LoggingLevel",
+      "description": "Log level for the T1 starter logger.",
+      "defaultValue": "SHORT",
+      "sourceType": "ru.t1.school.open.starter.LogProperties",
+      "enum": [
+        "SHORT",
+        "LONG"
+      ]
+    }
+  ]
+}
