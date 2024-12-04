@@ -1,4 +1,4 @@
-package ru.t1.school.open.starter.aspect.annotation;
+package ru.t1.school.open.logger.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
