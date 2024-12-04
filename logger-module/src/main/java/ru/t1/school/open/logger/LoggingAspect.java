@@ -1,4 +1,4 @@
-package ru.t1.school.open.starter.aspect;
+package ru.t1.school.open.logger;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory;
 public class LoggingAspect {
     private static final Logger logger = LoggerFactory.getLogger(LoggingAspect.class);
 
-    @Pointcut("@annotation(ru.t1.school.open.project.application.aspect.annotation.Logging)")
+    @Pointcut("ч@annotation(ru.t1.school.open.project.application.aspect.annotation.Logging)")
     public void loggingMethods() {
     }
 
